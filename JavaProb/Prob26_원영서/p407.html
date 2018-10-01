@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>유효성 검증</title>
+<style type="text/css">
+#msg {
+	color: red;
+}
+</style>
+<script type="text/javascript">
+	function checkData() {
+		//alert("여기에서 유효성 검증");
+		var msg = document.getElementById("msg");
+		
+		//이름
+		var name = document.getElementById("name").value;
+		if (name == "" || name.length == 0) {
+			msg.innerHTML = "이름을 기입해주세요";
+			document.getElementById('name').focus(); /* 네임창에 다시 입력하라고 포커스 주는 것 */
+			return false;
+		}
+		
+		//아이디
+		var id = document.getElementById("id").value;
+		if (!(id.length >= 6 && id.length <= 8)) {
+			msg.innerHTML = "아이디는 6~8자리로 정해주세요";
+			document.getElementById("id").value="";
+			document.getElementById('id').focus(); 
+			return false;
+		}
+		
+		//폰번호
+		var phone = document.getElementById("phone").value;
+		var pattern = /\d{3}-\d{4}-\d{4}/;
+		if (!(phone.match(pattern))) {
+			msg.innerHTML = "phone 정보 입력 형식 000-0000-0000";
+			document.getElementById("phone").value="";
+			document.getElementById('phone').focus(); 
+			return false;
+		} 
+		
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>회원 가입 양식</h2>
+	<br>
+	<form action="./process.html" method="get">
+		이름 : <input type="text" id="name" name="name"><br/>
+		<br> 
+		주소 : <input type="text" id="addr" name="addr" required="required"><br/>
+		<br> 
+		생일 : <input type="date" id="birth" name="birth" required="required"><br/>
+		<br> 
+		아이디 : <input type="text" id="id" name="id"><br/>
+		<br> 
+		phone : <input type="tel" id="phone" name="phone" required="required"><br/>
+		<br> 
+		e-mail : <input type="email" id="email" name="email" required="required"><br/>
+		<br> 
+		<input type="submit" value="회원가입" onclick="return checkData()"><!-- 메소드에 return있으면 여기도 꼭 return써줘야함 --> 
+		<input type="reset" value="초기화">
+
+	</form>
+	<br>
+	<br>
+	<div id="msg"></div>
+</body>
+</html>
