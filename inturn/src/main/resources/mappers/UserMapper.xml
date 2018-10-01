@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+	<select id="selectUser" resultType="UserVO">
+		SELECT id, pw, name, phone, birthday, type
+		FROM users
+	</select>
+	
+	<delete id="deleteUser">
+		DELETE FROM users
+		WHERE id = #{id}
+	</delete>
+	
+	<update id="">
+		UPDATE users
+		SET pw = #{pw},
+			name = #{name},
+			phone = #{phone},
+			birthday = #{birthday},
+			type = #{type}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="addUser" parameterType="UserVO">
+		INSERT INTO users(id, pw, name, phone, email, birthday, type, idx)
+		VALUES(#{id}, #{pw}, #{name}, #{phone}, #{email}, #{birthday}, #{type}, (select ifnull(max(u.idx),0)+1 from users u))
+	</insert>
+
+	<update id="modifyUser" parameterType="UserVO">
+		UPDATE USERS
+		SET pw = #{pw},
+			name = #{name},
+			phone = #{phone},
+			email = #{email},
+			birthday = #{birthday},
+			type = #{type},
+			icon_num = #{icon_num}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="modifyUserPw" parameterType="UserVO">
+		UPDATE USERS
+		SET pw = #{pw}
+		WHERE id = #{id}
+	</update>
+		
+	<select id="login" parameterType="UserVO" resultType="UserVO">
+		SELECT *
+		FROM users
+		WHERE id = #{id}
+			AND pw = #{pw}
+	</select>
+	
+	<select id="findID" parameterType="UserVO" resultType="String">
+		SELECT id
+		FROM users
+		WHERE name = #{name}
+			AND email = #{email}
+	</select>
+	
+	<select id="findPw" parameterType="UserVO" resultType="boolean">
+		SELECT count(*)
+		FROM users
+		WHERE id = #{id}
+			AND name = #{name}
+			AND email = #{email}
+	</select>
+	
+	<select id="getId" parameterType="UserVO" resultType="int">
+		SELECT count(*)
+		FROM users
+		WHERE id = #{id}
+	</select>
+</mapper>

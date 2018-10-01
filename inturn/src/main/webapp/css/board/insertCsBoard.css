@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+#btns {
+	width: 700px;
+	text-align:right;
+}
+
+#title {
+	width: 666px; 
+	display: inline;
+}
+
+#editor {
+	width: 700px;
+	height: 400px;
+}
+
+#secret {
+	text-align:right;
+	display: inline;
+}
+#secret_chk {
+	width: 700px;
+}
+#secret_pw {
+	width: 200px;
+}

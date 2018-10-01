@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.carousel-caption-title{
+    top: 10% !important;
+    bottom: auto !important;
+    right: 10% !important;
+	left: 10% !important;
+}
+
+.carousel-caption-btn {
+	top: 60%;
+	right: 25% !important;	
+}
+
+.carousel-caption-btn .btn{
+	background-color: #66D37E !important;
+	border-color: #66D37E !important;
+	margin: 0px 50px 0px 50px !important;
+}
+
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration:none !important;
+}
+
+#fh5co-logo a {
+	color: #000 !important;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.inturn.biz.users.vo.UserVO" alias="UserVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.users.vo.EducationalLevelVO" alias="EducationalLevelVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.users.vo.CareerVO" alias="CareerVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.users.vo.JobVO" alias="JobVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.users.vo.MailVO" alias="MailVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.users.vo.CertificateVO" alias="CertificateVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.CsBoardVO" alias="CsBoardVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.FreeBoardVO" alias="FreeBoardVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.MentorBoardVO" alias="MentorBoardVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.FileGroupVO" alias="FileGroupVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.FilesVO" alias="FilesVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.ReplyVO" alias="ReplyVO"></typeAlias>
+		<typeAlias type="com.inturn.biz.board.vo.MenteeBoardVO" alias="MenteeBoardVO"></typeAlias>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="./mappers/UserMapper.xml" />
+		<mapper resource="./mappers/FreeBoardMapper.xml" />
+		<mapper resource="./mappers/MentorBoardMapper.xml" />
+		<mapper resource="./mappers/CsBoardMapper.xml" />
+		<mapper resource="./mappers/FileMapper.xml" />
+		<mapper resource="./mappers/EducationalLevelMapper.xml" />
+		<mapper resource="./mappers/ProfileMapper.xml" />
+		<mapper resource="./mappers/MailMapper.xml" />
+		<mapper resource="./mappers/ReplyMapper.xml" />
+		<mapper resource="./mappers/MenteeBoardMapper.xml"/>
+	</mappers>
+</configuration>

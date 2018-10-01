@@ -1,0 +1,56 @@
+@charset "UTF-8";
+.page-login {
+	overflow:hidden;
+	padding: 50px 90px 50px 90px;
+	
+}
+
+.box-login-default {
+	overflow:hidden;
+	padding: 0 0 0 0 !important;
+}
+.box-login-default fieldset {position:relative;}
+.box-login-default fieldset input[type="text"],
+.box-login-default fieldset input[type="password"] {width:100%; height:50px; padding-left:30px; font-size:14px;}
+
+#label_checkSaveId{
+ 	padding: 40px 80px 0 20px;
+}
+
+@media (max-width:768px) {
+    .box-login-default {padding:0;}
+    .box-login-default h2 {margin-bottom:20px; font-size:18px;}
+    .box-login-default fieldset {float:none; width:100%; padding-right:95px;}
+    .box-login-default fieldset input[type="text"],
+    .box-login-default fieldset input[type="password"] {height:41px; padding-left:12px;}
+    .box-login-default fieldset p + p {margin-top:5px;}
+    .box-login-default fieldset .btn-login {width:85px; height:87px; padding-top:33px; font-size:18px;}
+}
+
+
+.login-h2 {
+	color:#413c39;
+	font-size:24px;
+	font-weight:800;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+
+.box-login-sns{
+	overflow:hidden;
+	text-align: center;
+	padding: 0 0 0 0 !important;
+}
+.box-login-sns p{
+	padding:15px;
+}
+.snsLoginList {
+	list-style: none;
+	padding : 0 0 0 0 !important;
+}
+
+.snsLoginList li{
+	margin-top: 30px;
+}
+
